@@ -18,12 +18,12 @@ class ArbolBST:
             self._insertar_recursivo(self.raiz, espanol.lower(), ingles.lower())
 
     def _insertar_recursivo(self, nodo_actual, espanol, ingles):
-        if espanol < nodo_actual.espanol:
+        if espanol.lower() < nodo_actual.espanol.lower():
             if nodo_actual.izquierdo is None:
                 nodo_actual.izquierdo = Nodo(espanol, ingles)
             else:
                 self._insertar_recursivo(nodo_actual.izquierdo, espanol, ingles)
-        elif espanol > nodo_actual.espanol:
+        elif espanol.lower() > nodo_actual.espanol.lower():
             if nodo_actual.derecho is None:
                 nodo_actual.derecho = Nodo(espanol, ingles)
             else:
